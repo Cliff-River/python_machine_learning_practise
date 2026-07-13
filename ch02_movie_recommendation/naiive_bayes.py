@@ -25,3 +25,11 @@ label_indices = get_label_indices(Y_train)
 print(label_indices)
 
 # %%
+def get_prior(labels_indices : defaultdict[str, list]):
+    prior = { label : len(indices) / sum(labels_indices.values()) for label, indices in labels_indices.items() }
+    return prior
+
+prior = get_prior(label_indices)
+print(prior)
+
+# %%
