@@ -35,3 +35,6 @@ prior = get_prior(label_indices)
 prior
 
 # %%
+def get_likelihood(features, labels_indices : defaultdict[str, list], smoothing=0):
+    likelihood = { label : len(indices) for label, indices in labels_indices.items() }
+    return likelihood
